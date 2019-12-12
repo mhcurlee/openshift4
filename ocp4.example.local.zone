@@ -1,0 +1,42 @@
+$ORIGIN ocp4.example.local.
+$TTL 86400
+@         IN  SOA  ns1.ocp4.example.local. hostmaster.ocp4.example.local. (
+              2001062501  ; serial
+              21600       ; refresh after 6 hours
+              3600        ; retry after 1 hour
+              604800      ; expire after 1 week
+              86400 )     ; minimum TTL of 1 day
+;
+;
+
+
+          IN  NS     ns1.ocp4.example.local.
+ns1       IN  A      10.0.2.200
+
+
+;
+;
+
+
+bootstrap    IN  A       10.0.2.180
+master0      IN  A       10.0.2.181
+master1      IN  A       10.0.2.182
+master2      IN  A       10.0.2.183
+worker0      IN  A       10.0.2.184
+worker1      IN  A       10.0.2.185
+
+etcd-0        IN A        10.0.2.181
+etcd-1        IN A        10.0.2.182
+etcd-2        IN A        10.0.2.183
+
+api          IN A        10.0.2.200
+api-int     IN A        10.0.2.200
+
+
+_etcd-server-ssl._tcp.ocp4.example.local.  86400 IN    SRV 0        10     2380 etcd-0.ocp4.example.local.
+_etcd-server-ssl._tcp.ocp4.example.local.  86400 IN    SRV 0        10     2380 etcd-1.ocp4.example.local.
+_etcd-server-ssl._tcp.ocp4.example.local.  86400 IN    SRV 0        10     2380 etcd-2.ocp4.example.local.
+
+
+;
+;

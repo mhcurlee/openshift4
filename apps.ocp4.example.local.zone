@@ -1,0 +1,24 @@
+$ORIGIN apps.ocp4.example.local.
+$TTL 86400
+@         IN  SOA  ns1.apps.ocp4.example.local. hostmaster.apps.ocp4.example.local. (
+              2001062501  ; serial
+              21600       ; refresh after 6 hours
+              3600        ; retry after 1 hour
+              604800      ; expire after 1 week
+              86400 )     ; minimum TTL of 1 day
+;
+;
+
+
+          IN  NS     ns1.apps.ocp4.example.local.
+ns1       IN  A      10.0.2.200
+
+
+;
+;
+
+
+*     IN A        10.0.2.200
+
+;
+;
